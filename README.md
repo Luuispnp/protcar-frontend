@@ -1,16 +1,49 @@
-# React + Vite
+# ProtCar - Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page de conversão para captação de leads de proteção veicular, com botão de cotação que envia os dados do cliente (Nome, Telefone e E-mail) para a API, e um painel administrativo protegido onde a equipe de vendas consulta os leads recebidos.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Camada | Tecnologias |
+|---|---|
+| Framework | React + Vite |
+| Estilização | Tailwind CSS v4 |
+| Requisições HTTP | Axios |
+| Roteamento | React Router Dom |
+| Ícones | Lucide React |
+| Infraestrutura | AWS S3 + CloudFront |
 
-## React Compiler
+## Estrutura
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+front-end/
+└── src/
+    ├── components/      componentes de UI
+    ├── pages/            LandingPage, AdminPanel, Login
+    └── services/         cliente Axios (api.js)
+```
 
-## Expanding the ESLint configuration
+## Como rodar localmente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Pré-requisitos
+- Node.js (LTS)
+- API do back-end rodando (veja o README do back-end)
+
+### Passos
+
+```bash
+npm install
+npm run dev
+```
+
+Por padrão, disponível em `http://localhost:5173`.
+
+Configure a URL da API em `src/services/api.js` conforme o ambiente (local ou produção).
+
+## Deploy
+
+Build gerado via `npm run build`, publicado no Amazon S3 e servido pelo CloudFront, com fallback de rotas (404) apontando para `index.html`.
+
+## Licença
+
+Desenvolvido sob medida para a ProtCar - Associação de Benefícios. Todos os direitos reservados.
