@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-protcar-yellow: #FFC800;
+  --color-protcar-black: #000000;
+  --color-protcar-dark: #1A1A1A;
+  --color-protcar-gray: #F3F4F6;
+}
+
+body {
+  background-color: var(--color-protcar-black);
+  color: #FFFFFF;
+}
