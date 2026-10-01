@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 export default function LandingPage() {
-  const numeroWhatsApp = "5511999999999"; 
+  const numeroWhatsApp = "31990934948"; 
   
   const [formData, setFormData] = useState({
     placa: '', marca: '', modelo: '', anoFabricacao: '', 
@@ -72,10 +72,15 @@ export default function LandingPage() {
         </div>
       )}
 
-      {/* Header Fixo */}
       <header className="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800 shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-black italic tracking-tighter text-protcar-yellow drop-shadow-md">PROTCAR</h1>
+          
+          <img 
+            src="src/assets/protcar-logo.png" 
+            alt="Logo Protcar" 
+            className="h-10 w-auto object-contain" 
+          />
+
           <a href="#cotacao" className="hidden md:flex items-center gap-2 bg-protcar-yellow text-zinc-900 font-bold py-2 px-6 rounded-full hover:bg-yellow-400 transition-transform hover:scale-105">
             Cotar Agora <ArrowRight size={18} />
           </a>
@@ -250,21 +255,24 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           
           <div className="space-y-1">
-            <p>CNPJ PROTCAR: 50.180.527/0001-13</p>
-            <p>FIP SUSEP: 01546</p>
+            <p>© {new Date().getFullYear()} Protcar. Todos os direitos reservados.</p>
           </div>
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
             <div className="hidden md:block w-px h-12 bg-zinc-800"></div>
             
             <div className="flex items-center gap-4">
-              <div className="text-3xl font-black italic text-protcar-yellow opacity-90">
-                PROTCAR
+              <div>
+                <img 
+                  src="src/assets/protcar-logo.png" 
+                  alt="Logo Protcar" 
+                  className="h-10 w-auto object-contain" 
+                />
               </div>
               <div className="space-y-1 text-left">
                 <p className="text-white font-bold">Endereço Matriz Protcar</p>
-                <p>Av. Afonso Pena, nº 1000 - Centro</p>
-                <p>Belo Horizonte/MG 30130-002</p>
+                <p>Av. José Faria da Rocha, nº 4935 - Eldorado</p>
+                <p>Contagem/MG 32310-210</p>
               </div>
             </div>
           </div>
