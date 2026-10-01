@@ -63,13 +63,14 @@ export default function AdminPanel() {
                   <th className="p-5 font-bold text-zinc-300 uppercase text-xs tracking-wider">Veículo</th>
                   <th className="p-5 font-bold text-zinc-300 uppercase text-xs tracking-wider">Placa</th>
                   <th className="p-5 font-bold text-zinc-300 uppercase text-xs tracking-wider">Contato</th>
+                  <th className="p-5 font-bold text-zinc-300 uppercase text-xs tracking-wider">E-mail</th>
                   <th className="p-5 font-bold text-zinc-300 uppercase text-xs tracking-wider">Localidade</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-800">
                 {cotacoes.length === 0 ? (
                   <tr>
-                    <td colSpan="6" className="p-12 text-center text-zinc-500 font-medium">
+                    <td colSpan="7" className="p-12 text-center text-zinc-500 font-medium">
                       <div className="flex flex-col items-center gap-3">
                         <LayoutList size={48} className="opacity-30" />
                         <p>Nenhuma cotação recebida ainda.</p>
@@ -87,6 +88,15 @@ export default function AdminPanel() {
                         <a href={`https://wa.me/55${c.telefone.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className="text-green-400 hover:text-green-300 font-bold hover:underline">
                           {c.telefone}
                         </a>
+                      </td>
+                      <td className="p-5 text-sm">
+                        {c.email ? (
+                          <a href={`mailto:${c.email}`} className="text-zinc-300 hover:text-protcar-yellow hover:underline break-all">
+                            {c.email}
+                          </a>
+                        ) : (
+                          <span className="text-zinc-600">-</span>
+                        )}
                       </td>
                       <td className="p-5 text-zinc-400 text-sm">{c.cidade} - <span className="uppercase">{c.estado}</span></td>
                     </tr>
