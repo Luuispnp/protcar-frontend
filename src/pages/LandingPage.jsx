@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { api } from '../services/api';
+import logo from '../assets/protcar-logo.png';
 import { 
   ShieldCheck, MessageCircle, ArrowRight, 
   Headset, Navigation, Car, Users, 
@@ -76,7 +77,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           
           <img 
-            src="src/assets/protcar-logo.png" 
+            src={logo} 
             alt="Logo Protcar" 
             className="h-10 w-auto object-contain" 
           />
@@ -264,7 +265,7 @@ export default function LandingPage() {
             <div className="flex items-center gap-4">
               <div>
                 <img 
-                  src="src/assets/protcar-logo.png" 
+                  src={logo} 
                   alt="Logo Protcar" 
                   className="h-10 w-auto object-contain" 
                 />
